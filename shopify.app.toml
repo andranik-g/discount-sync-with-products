@@ -3,7 +3,7 @@
 client_id = "ea5c6df6e3e67ab8ef5b0928b12b17c3"
 name = "Discount sync test"
 handle = "discount-sync"
-application_url = "https://floor-visible-dan-patricia.trycloudflare.com"
+application_url = "https://discount-sync-with-products.onrender.com"
 embedded = true
 
 [build]
