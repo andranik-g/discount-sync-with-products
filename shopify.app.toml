@@ -1,0 +1,32 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "ea5c6df6e3e67ab8ef5b0928b12b17c3"
+name = "Discount sync test"
+handle = "discount-sync"
+application_url = "https://floor-visible-dan-patricia.trycloudflare.com"
+embedded = true
+
+[build]
+include_config_on_deploy = true
+automatically_update_urls_on_dev = true
+
+[webhooks]
+api_version = "2025-07"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "/webhooks/app/uninstalled"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/scopes_update" ]
+  uri = "/webhooks/app/scopes_update"
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "read_discounts,read_products,write_products,write_metaobjects,read_metaobjects"
+
+[auth]
+redirect_urls = ["https://floor-visible-dan-patricia.trycloudflare.com/auth/callback", "https://floor-visible-dan-patricia.trycloudflare.com/auth/shopify/callback", "https://floor-visible-dan-patricia.trycloudflare.com/api/auth/callback"]
+
+[pos]
+embedded = false
